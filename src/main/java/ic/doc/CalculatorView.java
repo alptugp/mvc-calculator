@@ -1,7 +1,7 @@
 package ic.doc;
 
-import javax.swing.*;
 import java.awt.event.ActionListener;
+import javax.swing.*;
 
 public class CalculatorView implements Updatable {
   private static final int frameWidth = 360;
@@ -10,7 +10,8 @@ public class CalculatorView implements Updatable {
 
   private final JTextField textField;
 
-  public CalculatorView(ActionListener numberButtonActionListener, ActionListener commandButtonActionListener) {
+  public CalculatorView(ActionListener numberButtonActionListener,
+                        ActionListener commandButtonActionListener) {
     JFrame frame = new JFrame("Reverse Polish Calculator");
     frame.setSize(frameWidth, frameHeight);
 
