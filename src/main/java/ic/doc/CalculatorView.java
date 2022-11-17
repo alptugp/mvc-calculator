@@ -1,9 +1,7 @@
 package ic.doc;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.List;
 
 public class CalculatorView implements Updatable {
   private static final int frameWidth = 360;
@@ -35,8 +33,6 @@ public class CalculatorView implements Updatable {
     textField.setEditable(false);
     panel.add(textField);
 
-
-
     frame.add(panel);
     frame.setVisible(true);
     frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -44,6 +40,10 @@ public class CalculatorView implements Updatable {
 
   @Override
   public void update(CalculatorModel calculatorModel) {
-    textField.setText(String.valueOf(calculatorModel.getTopOfNumberStack()));
+    if (calculatorModel.hasError()) {
+      textField.setText("ERROR");
+    } else {
+      textField.setText(String.valueOf(calculatorModel.getTopOfNumberStack()));
+    }
   }
 }
